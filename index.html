@@ -10,11 +10,28 @@
   </head>
   <body>
     <nav>
-      <a href=""><img src="assets/menu.svg" alt="menu-icon" class="icon" /></a>
-      <a href=""
-        ><img src="assets/pallete-dot.svg" alt="pallete-icon" class="icon"
-      /></a>
+      <a><img src="assets/menu.svg" alt="menu-icon" class="icon" /></a>
+      <a>
+        <li class="dropdown">
+          <img
+            onclick="setTheme(ThemesEnum.dark.name)"
+            src="assets/pallete-dot.svg"
+            alt="pallete-icon"
+            class="icon"
+          />
+          <ul class="dropdown_menu">
+            <li onclick="setTheme(ThemesEnum.green.name)">
+              <img src="assets/green-dot.svg" alt="green-icon" class="icon" />
+            </li>
+            <li onclick="setTheme(ThemesEnum.light.name)">
+              <img src="assets/light-dot.svg" alt="light-icon" class="icon" />
+            </li>
+          </ul>
+        </li>
+      </a>
     </nav>
     <div class="timer">17:23</div>
+
+    <script src="script.js"></script>
   </body>
 </html>

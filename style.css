@@ -1,12 +1,17 @@
 @import url("https://fonts.googleapis.com/css2?family=Lato:wght@100&display=swap");
 
+:root {
+  --bg: #161616;
+  --color: #eeeeee;
+}
+
 html {
-  background-color: #161616;
   height: 100%;
 }
 
 body {
-  color: #eeeeee;
+  background-color: var(--bg);
+  color: var(--color);
   font-family: "Lato", sans-serif;
   margin: 0;
   height: 100%;
@@ -35,4 +40,65 @@ nav a {
   font-size: 7rem;
   height: 100%;
   justify-content: center;
+}
+
+.dropdown {
+  align-items: center;
+  padding: 20px 40px;
+  display: flex;
+  justify-content: center;
+  padding: 0;
+  position: relative;
+  perspective: 1000px;
+  z-index: 100;
+}
+
+.dropdown:hover {
+  cursor: pointer;
+}
+
+.dropdown:hover .dropdown_menu {
+  display: block;
+  opacity: 1;
+}
+
+.dropdown:hover .dropdown_menu li {
+  display: block;
+}
+
+.dropdown_menu {
+  padding: 0;
+  margin: 0;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  perspective: 1000px;
+  z-index: -1;
+  animation: growDown 300ms ease-in-out forwards;
+  transform-origin: top center;
+  display: none;
+}
+
+.dropdown_menu li {
+  display: none;
+  opacity: 1;
+  margin-top: 1rem;
+  transition: all 0.2s ease-in-out;
+}
+
+.dropdown_menu li:hover {
+  transform: scale(1.2);
+}
+
+@keyframes growDown {
+  0% {
+    transform: scaleY(0);
+  }
+  80% {
+    transform: scaleY(1.1);
+  }
+  100% {
+    transform: scaleY(1);
+  }
 }
