@@ -1,0 +1,38 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@100&display=swap");
+
+html {
+  background-color: #161616;
+  height: 100%;
+}
+
+body {
+  color: #eeeeee;
+  font-family: "Lato", sans-serif;
+  margin: 0;
+  height: 100%;
+}
+
+nav {
+  display: flex;
+  flex: 0 1 auto;
+  justify-content: space-between;
+  position: absolute;
+  width: 100%;
+}
+
+nav a {
+  padding: 1rem;
+}
+
+.icon {
+  height: 2rem;
+}
+
+.timer {
+  align-items: center;
+  display: flex;
+  flex: 1 1 auto;
+  font-size: 7rem;
+  height: 100%;
+  justify-content: center;
+}
