@@ -1,6 +1,7 @@
 const audio = new Audio("./assets/alert.mp3");
 const defaultBreak = 5 * 60;
 const defaultInterval = 25 * 60;
+const defaultMargin = 5 * 60;
 const display = document.querySelector("#timer");
 let interval;
 let isTimerPaused = true;
@@ -8,12 +9,12 @@ let isBreak = false;
 let duration = defaultInterval;
 
 const addTime = () => {
-  duration += 5 * 60;
+  duration += defaultMargin;
   updateTimer();
 };
 
 const restTime = () => {
-  duration > 5 * 60 ? (duration -= 5 * 60) : (duration = 0);
+  duration > defaultMargin ? (duration -= defaultMargin) : (duration = 0);
   updateTimer();
 };
 

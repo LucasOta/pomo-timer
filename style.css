@@ -15,6 +15,11 @@ body {
   font-family: "Lato", sans-serif;
   margin: 0;
   height: 100%;
+  -webkit-transition: background 2s;
+  -moz-transition: background 2s;
+  -ms-transition: background 2s;
+  -o-transition: background 2s;
+  transition: background 2s;
 }
 
 nav {

@@ -8,32 +8,39 @@
     <link rel="stylesheet" href="style.css" />
     <link rel="icon" type="image/png" href="favicon.ico" />
   </head>
-  <body onload="updateTimer()">
+
+  <body onload="onInit()">
     <nav>
-      <a><img src="assets/menu.svg" alt="menu-icon" class="icon" /></a>
       <a>
-        <li class="dropdown">
-          <img
-            onclick="setTheme(ThemesEnum.dark.name)"
-            src="assets/pallete-dot.svg"
-            alt="pallete-icon"
-            class="icon"
-          />
-          <ul class="dropdown_menu">
-            <li onclick="setTheme(ThemesEnum.green.name)">
-              <img src="assets/green-dot.svg" alt="green-icon" class="icon" />
-            </li>
-            <li onclick="setTheme(ThemesEnum.light.name)">
-              <img src="assets/light-dot.svg" alt="light-icon" class="icon" />
-            </li>
-          </ul>
-        </li>
+        <img
+          id="darkMenu"
+          src="assets/dark-menu.svg"
+          alt="menu-icon"
+          class="icon"
+        />
+        <img
+          id="lightMenu"
+          src="assets/light-menu.svg"
+          alt="menu-icon"
+          class="icon"
+        />
+      </a>
+      <a onclick="toogleTheme()">
+        <img id="moon" src="assets/moon.svg" alt="moon-icon" class="icon" />
+        <img id="sun" src="assets/sun.svg" alt="sun-icon" class="icon" />
       </a>
     </nav>
+
     <div id="timer" class="timer" onclick="toogleTimer()">00:00</div>
 
     <script src="./scripts/theme.js"></script>
     <script src="./scripts/timer.js"></script>
     <script src="./scripts/touch-gestures.js"></script>
+    <script>
+      const onInit = () => {
+        updateTimer();
+        toogleTheme();
+      };
+    </script>
   </body>
 </html>
