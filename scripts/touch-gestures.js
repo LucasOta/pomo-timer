@@ -5,12 +5,6 @@ const getTouches = (evt) => {
   return evt.touches || evt.originalEvent.touches;
 };
 
-const handleTouchStart = (evt) => {
-  const firstTouch = getTouches(evt)[0];
-  xDown = firstTouch.clientX;
-  yDown = firstTouch.clientY;
-};
-
 const handleTouchMove = (evt) => {
   if (!xDown || !yDown) {
     return;
@@ -23,11 +17,17 @@ const handleTouchMove = (evt) => {
   const yDiff = yDown - yUp;
 
   if (Math.abs(xDiff) > Math.abs(yDiff)) {
-    xDiff > 0 ? restFiveMinutes() : addFiveMinutes();
+    xDiff > 0 ? restTime() : addTime();
   }
 
   xDown = null;
   yDown = null;
+};
+
+const handleTouchStart = (evt) => {
+  const firstTouch = getTouches(evt)[0];
+  xDown = firstTouch.clientX;
+  yDown = firstTouch.clientY;
 };
 
 document.addEventListener("touchstart", handleTouchStart, false);

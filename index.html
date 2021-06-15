@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="style.css" />
     <link rel="icon" type="image/png" href="favicon.ico" />
   </head>
-  <body>
+  <body onload="updateTimer()">
     <nav>
       <a><img src="assets/menu.svg" alt="menu-icon" class="icon" /></a>
       <a>
@@ -30,7 +30,7 @@
         </li>
       </a>
     </nav>
-    <div id="timer" class="timer" onclick="toogleTimer()">25:00</div>
+    <div id="timer" class="timer" onclick="toogleTimer()">00:00</div>
 
     <script src="./scripts/theme.js"></script>
     <script src="./scripts/timer.js"></script>
