@@ -1,30 +1,3 @@
-// Theming
-const root = document.documentElement;
-
-const ThemesEnum = Object.freeze({
-  green: {
-    bg: "#064420",
-    name: "green",
-    color: "#ffffff",
-  },
-  light: {
-    bg: "#eeeeee",
-    name: "light",
-    color: "#161616",
-  },
-  dark: {
-    bg: "#161616",
-    name: "dark",
-    color: "#eeeeee",
-  },
-});
-
-setTheme = (theme) => {
-  const { bg, color } = ThemesEnum[theme];
-  root.style.setProperty("--bg", bg);
-  root.style.setProperty("--color", color);
-};
-
 // Timer
 const display = document.querySelector("#timer");
 let isTimerPaused = true;
@@ -59,6 +32,23 @@ const updateTimer = () => {
   display.textContent = `${minutes}:${seconds}`;
 
   if (--duration < 0) {
+    duration = 0;
     clearInterval(interval);
+  }
+};
+
+const addFiveMinutes = () => {
+  duration += 5 * 60;
+  updateTimer();
+  duration++;
+};
+
+const restFiveMinutes = () => {
+  if (duration > 5 * 60) {
+    duration -= 5 * 60;
+    updateTimer();
+    duration++;
+  } else {
+    duration = 0;
   }
 };
