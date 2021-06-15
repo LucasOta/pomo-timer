@@ -1,46 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Pomo</title>
-    <link rel="stylesheet" href="style.css" />
-    <link rel="icon" type="image/png" href="favicon.ico" />
-  </head>
 
-  <body onload="onInit()">
-    <nav>
-      <a>
-        <img
-          id="darkMenu"
-          src="assets/dark-menu.svg"
-          alt="menu-icon"
-          class="icon"
-        />
-        <img
-          id="lightMenu"
-          src="assets/light-menu.svg"
-          alt="menu-icon"
-          class="icon"
-        />
-      </a>
-      <a onclick="toogleTheme()">
-        <img id="moon" src="assets/moon.svg" alt="moon-icon" class="icon" />
-        <img id="sun" src="assets/sun.svg" alt="sun-icon" class="icon" />
-      </a>
-    </nav>
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pomo</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" type="image/png" href="favicon.ico" />
+</head>
 
-    <div id="timer" class="timer" onclick="toogleTimer()">00:00</div>
+<body onload="onInit()">
+  <nav>
+    <a></a>
+    <a style="display: none;">
+      <img id="darkMenu" src="assets/dark-menu.svg" alt="menu-icon" class="icon" />
+      <img id="lightMenu" src="assets/light-menu.svg" alt="menu-icon" class="icon" />
+    </a>
+    <a onclick="toogleTheme()">
+      <img id="moon" src="assets/moon.svg" alt="moon-icon" class="icon" />
+      <img id="sun" src="assets/sun.svg" alt="sun-icon" class="icon" />
+    </a>
+  </nav>
 
-    <script src="./scripts/theme.js"></script>
-    <script src="./scripts/timer.js"></script>
-    <script src="./scripts/touch-gestures.js"></script>
-    <script>
-      const onInit = () => {
-        updateTimer();
-        toogleTheme();
-      };
-    </script>
-  </body>
+  <div id="timer" class="timer" onclick="toogleTimer()">00:00</div>
+
+  <span>Made by <a href="https://www.linkedin.com/in/lucas-mat%C3%ADas-ota%C3%B1o-363167172/"
+      target="_blank">Lucas</a></span>
+
+  <script src="./scripts/theme.js"></script>
+  <script src="./scripts/timer.js"></script>
+  <script src="./scripts/touch-gestures.js"></script>
+  <script>
+    const onInit = () => {
+      updateTimer();
+      toogleTheme();
+    };
+  </script>
+</body>
+
 </html>

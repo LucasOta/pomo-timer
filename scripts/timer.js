@@ -34,10 +34,10 @@ const timeIsUp = () => {
   let message;
   if (isBreak) {
     duration = defaultInterval;
-    message = "Sorry, we should keep working.";
+    message = "Sorry, we should keep working. 🛠️";
   } else {
     duration = defaultBreak;
-    message = "Coffee time! Break is here.";
+    message = "Coffee time! Break is here. ☕";
   }
   isBreak = !isBreak;
   confirm(message) ? startTimer() : updateTimer();

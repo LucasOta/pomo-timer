@@ -97,6 +97,18 @@ nav a {
   transform: scale(1.2);
 }
 
+span {
+  position: absolute;
+  bottom: 1rem;
+  right: 1rem;
+  font-weight: 600;
+}
+
+span a {
+  text-decoration: none;
+  color: var(--color);
+}
+
 @keyframes growDown {
   0% {
     transform: scaleY(0);
