@@ -1,7 +1,9 @@
-// Timer
 const display = document.querySelector("#timer");
+const defaultInterval = 25 * 60;
+const defaultBreak = 5 * 60;
 let isTimerPaused = true;
-let duration = 25 * 60;
+let isBreak = false;
+let duration = defaultInterval;
 let interval;
 
 const toogleTimer = () => {
@@ -34,6 +36,7 @@ const updateTimer = () => {
   if (--duration < 0) {
     duration = 0;
     clearInterval(interval);
+    timeIsUp();
   }
 };
 
@@ -51,4 +54,19 @@ const restFiveMinutes = () => {
   } else {
     duration = 0;
   }
+};
+
+const audio = new Audio("./assets/alert.mp3");
+const timeIsUp = () => {
+  audio.play();
+  let message;
+  if (isBreak) {
+    duration = defaultInterval;
+    message = "Sorry, we should keep working.";
+  } else {
+    duration = defaultBreak;
+    message = "Coffee time! Break is here.";
+  }
+  isBreak = !isBreak;
+  confirm(message) ? startTimer() : updateTimer();
 };
